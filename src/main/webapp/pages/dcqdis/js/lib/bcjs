@@ -1,0 +1,41 @@
+var req = {
+ method: 'POST',
+ url: 'http://example.com',
+ headers: {
+   'Content-Type': undefined
+ },
+ data: { test: 'test' }
+}
+
+$http(req).success(function(){...}).error(function(){...});
+
+
+angular.module("app",[])
+.service("ninenik",["$http",function($http){
+    this.showArticle = function($scope){
+         var url="http://www.ninenik.com/demo/today_view_article.php?callback=JSON_CALLBACK";
+
+
+
+       // $http.get("http://54.255.180.58:8080/namedcq/getNews").
+       // $http.get("http://localhost:8080/namedcq/getnews").
+         
+         
+         
+        $http.post("http://localhost:8080/namedcq/getDataForListView",{ activityName: "ต่อทะเบียน"}).
+        success(function(data, status, headers, config) {
+          alert( "Is ok message: " + status);
+      //    alert(data);
+        }).
+        error(function(data, status, headers, config) {
+          alert( "failure message: " + status);
+        });
+
+
+    };
+}])
+.controller("appController",["$scope","ninenik",function($scope,ninenik){
+    $scope.data1="1";
+    $scope.articles=[];
+    ninenik.showArticle($scope);
+}]);

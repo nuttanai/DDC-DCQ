@@ -1,0 +1,38 @@
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/lib/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/app0.js"></script>
+    <title>My Learn AngularJs 5</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body ng-controller="appController">
+
+    <br>
+    <div class="container">
+
+    <table class="table table-stroped">
+        <tr class="active">
+            <th>#</th>
+            <th>Topic</th>
+            <th>Date</th>
+            <th>View</th>
+        </tr>
+        <tr ng-class-even="'warning'"  ng-repeat="article in articles">
+            <td>{{article.newId}}</td>
+            <td>{{article.hotNewsName}}</td>
+            <td>{{article.hotNews}}</td>
+            <td>{{article.view}}</td>
+        </tr>
+    </table>
+
+    </div>
+
+
+</body>
+</html>

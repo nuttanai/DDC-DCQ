@@ -1,0 +1,37 @@
+
+<html ng-app="application">
+<head>
+<script src="js/lib/bootstrap.min.js"></script>
+<!--AngularJS Javascript -->
+<script src="js/lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body>
+  <header>
+  <h1 class="text-center">{{"cat"}}'s Sushi Store"</h1>
+  <h2 class="text-center">Open Since {{10*200}} </h2>
+</header>
+<!-- Bootstrap JavaScript -->
+
+<p>
+{{"Hello," + "AngularJS"}}
+</p>
+<p>
+    Number is {{2 + 2}}
+</p>
+
+<div class="list-group">                  <!-- ชื่อของ Controller as ชื่อเรียกในส่วนนี้(Alias)-->
+     <div class="list-group-item" ng-controller="storeController as store">
+         <h1>{{sushi.name}}</h1>
+         <h2>{{sushi.price}} yen<h2>
+         <p>{{sushi.description}}<p>
+     </div>
+ </div>
+
+</body>
+</html>
